@@ -20,7 +20,7 @@ while True:
 
     v = i % LENGTH
 
-    pixels[v] = BLUE | RED
+    pixels[v] = (255, 0, 255)
 
     if (v - 1) >= 0:
         pixels[v - 1] = BLUE | RED
@@ -29,5 +29,5 @@ while True:
         pixels[v + 1] = BLUE | RED
 
     i += 1
-    time.sleep(0.005)
+    time.sleep(1)
 
