@@ -16,6 +16,9 @@ i = 0
 end = LENGTH
 
 while True:
+    if end == 0:
+        end = LENGTH
+
     index = i % end
 
     (r, g, b) = colorsys.hsv_to_rgb(remap(index, 0, LENGTH - 1, 0, 1), 1, 1)
@@ -35,4 +38,4 @@ while True:
 
     pixels.show()
     i += 1
-    time.sleep(0.01)
+    #time.sleep(0.01)
