@@ -22,4 +22,4 @@ while True:
             int(remap(b, 0, 1, 0, 255))
         )
 
-    offset += 1
+    offset += 10
