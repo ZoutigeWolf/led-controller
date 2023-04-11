@@ -2,6 +2,10 @@ import time
 import board
 import neopixel
 
+def remap(x, in_min, in_max, out_min, out_max):
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
+
+
 def generate_rainbow_colors():
     rainbow_colors = []
     for i in range(255):
@@ -35,6 +39,6 @@ offset = 0
 
 while True:
     for i in range(LENGTH):
-        pixels[i] = COLORS[-i]
+        pixels[i] = COLORS[(remap(i, 0, LENGTH, 0, 255) + offset) % 255]
 
-    offset += 1
+    offset += 10
