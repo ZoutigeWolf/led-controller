@@ -24,7 +24,7 @@ while True:
     )
 
     if index > 0:
-        pixels[i - 1] = (0, 0, 0)
+        pixels[index - 1] = (0, 0, 0)
 
     pixels.show()
     i += 1
