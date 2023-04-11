@@ -7,21 +7,21 @@ def generate_rainbow_colors():
     for i in range(255):
         if i < 85:
             r = 255
-            g = int(255 * ((85 - i) / 85))
+            g = int(255 * (i / 85))
             b = 0
         elif i < 170:
             i -= 85
             r = int(255 * ((85 - i) / 85))
-            g = int(255 * (i / 85))
-            b = 0
+            g = 255
+            b = int(255 * (i / 85))
         else:
             i -= 170
             r = 0
             g = int(255 * ((85 - i) / 85))
-            b = int(255 * (i / 85))
+            b = 255
         rainbow_colors.append((r, g, b))
-    rainbow_colors.reverse()
     return rainbow_colors
+
 
 
 
