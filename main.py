@@ -32,8 +32,7 @@ pixels = neopixel.NeoPixel(board.D18, LENGTH)
 offset = 0
 
 while True:
-    print(offset)
-    pixels[0] = COLORS[(offset) % 255]
-
+    for i in range(LENGTH):
+        pixels[i] = COLORS[(offset + i) % 255]
 
     offset += 1
