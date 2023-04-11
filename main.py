@@ -24,7 +24,6 @@ offset = 0
 
 while True:
     for i in range(LENGTH):
-        pixels[i] = COLORS[(offset % 255) + i]
+        pixels[i] = COLORS[(offset + i) % 255]
 
     offset += 1
-    time.sleep(0.001)
