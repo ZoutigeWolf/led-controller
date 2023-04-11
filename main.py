@@ -5,9 +5,20 @@ import neopixel
 def generate_rainbow_colors():
     rainbow_colors = []
     for i in range(255):
-        r = int(255 * ((i / 255) ** 2))
-        g = int(255 * ((1 - ((i / 255) - 0.5) ** 2) ** 0.5))
-        b = int(255 * (((255 - i) / 255) ** 2))
+        if i < 85:
+            r = int(255 * (i / 85))
+            g = int(255 * (i / 85))
+            b = int(255 * ((85 - i) / 85))
+        elif i < 170:
+            i -= 85
+            r = int(255 * (i / 85))
+            g = int(255 * ((85 - i) / 85))
+            b = 0
+        else:
+            i -= 170
+            r = int(255 * ((85 - i) / 85))
+            g = 0
+            b = int(255 * (i / 85))
         rainbow_colors.append((r, g, b))
     return rainbow_colors
 
