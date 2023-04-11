@@ -12,6 +12,8 @@ LENGTH = 84
 
 pixels = neopixel.NeoPixel(board.D18, LENGTH, auto_write=False)
 
+pixels.fill((0, 0, 0))
+
 i = 0
 
 while True:
@@ -25,5 +27,7 @@ while True:
     if i == 83:
         pixels.fill((0, 0, 0))
         i = -1
+
+    pixels.show()
 
     i += 1
