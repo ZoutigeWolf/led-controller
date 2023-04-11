@@ -9,7 +9,7 @@ def remap(x, in_min, in_max, out_min, out_max):
 
 LENGTH = 90
 
-pixels = neopixel.NeoPixel(board.D18, LENGTH)
+pixels = neopixel.NeoPixel(board.D18, LENGTH, auto_write=False)
 
 offset = 0
 
@@ -22,4 +22,5 @@ while True:
             int(remap(b, 0, 1, 0, 255))
         )
 
+    pixels.show()
     offset += 10
