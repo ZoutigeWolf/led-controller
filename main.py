@@ -16,6 +16,6 @@ offset = 0
 
 while True:
     for i in range(LENGTH):
-        pixels[i] = COLORS[(i * 10 + offset) % 255]
+        pixels[i] = COLORS[(i + offset) % 16]
 
-    offset += 25
+    offset += 1
