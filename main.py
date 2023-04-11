@@ -20,7 +20,9 @@ def generate_rainbow_colors():
             g = int(255 * ((85 - i) / 85))
             b = int(255 * (i / 85))
         rainbow_colors.append((r, g, b))
+    rainbow_colors.reverse()
     return rainbow_colors
+
 
 
 COLORS = generate_rainbow_colors()
