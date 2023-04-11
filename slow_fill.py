@@ -13,9 +13,10 @@ LENGTH = 90
 pixels = neopixel.NeoPixel(board.D18, LENGTH, auto_write=False)
 
 i = 0
+end = LENGTH
 
 while True:
-    index = i % LENGTH
+    index = i % end
 
     (r, g, b) = colorsys.hsv_to_rgb(remap(index, 0, LENGTH - 1, 0, 1), 1, 1)
     pixels[index] = (
@@ -23,6 +24,9 @@ while True:
         int(remap(g, 0, 1, 0, 255)),
         int(remap(b, 0, 1, 0, 255))
     )
+
+    if index == end - 1:
+        end -= 1
 
     if index == 0:
         pixels[LENGTH - 1] = (0, 0, 0)
