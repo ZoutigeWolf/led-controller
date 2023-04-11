@@ -30,7 +30,7 @@ def generate_rainbow_colors():
 
 
 COLORS = generate_rainbow_colors()
-print(COLORS)
+
 LENGTH = 90
 
 pixels = neopixel.NeoPixel(board.D18, LENGTH)
