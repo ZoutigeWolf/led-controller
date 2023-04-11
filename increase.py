@@ -29,3 +29,5 @@ while True:
     pixels.show()
 
     i += 1
+
+    time.sleep(0.1)
