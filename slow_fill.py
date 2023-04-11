@@ -23,7 +23,9 @@ while True:
         int(remap(b, 0, 1, 0, 255))
     )
 
-    if index > 0:
+    if index == 0:
+        pixels[LENGTH - 1] = (0, 0, 0)
+    else:
         pixels[index - 1] = (0, 0, 0)
 
     pixels.show()
