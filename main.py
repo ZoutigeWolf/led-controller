@@ -4,12 +4,14 @@ import neopixel
 
 LENGTH = 90
 
-RED = {255, 0, 0}
-GREEN = {0, 255, 0}
-BLUE = {0, 0, 255}
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
 
-WHITE = RED | GREEN | BLUE
-BLACK = {0, 0, 0}
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+
+PURPLE = (255, 0, 255)
 
 pixels = neopixel.NeoPixel(board.D18, LENGTH)
 
@@ -20,13 +22,13 @@ while True:
 
     v = i % LENGTH
 
-    pixels[v] = (255, 0, 255)
+    pixels[v] = PURPLE
 
     if (v - 1) >= 0:
-        pixels[v - 1] = tuple(RED | BLUE)
+        pixels[v - 1] = PURPLE
 
     if (v + 1) < LENGTH:
-        pixels[v + 1] = tuple(RED | BLUE)
+        pixels[v + 1] = PURPLE
 
     i += 1
     time.sleep(1)
