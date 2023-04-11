@@ -1,12 +1,11 @@
-import time
+import colorsys
 import board
 import neopixel
+
 
 def remap(x, in_min, in_max, out_min, out_max):
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
-
-COLORS = [(255, 0, 0), (255, 85, 0), (255, 170, 0), (255, 255, 0), (170, 255, 0), (85, 255, 0), (0, 255, 0), (0, 255, 85), (0, 255, 170), (0, 255, 255), (0, 170, 255), (0, 85, 255), (0, 0, 255), (85, 0, 255), (170, 0, 255), (255, 0, 255)]
 
 LENGTH = 90
 
@@ -16,6 +15,7 @@ offset = 0
 
 while True:
     for i in range(LENGTH):
-        pixels[i] = COLORS[(i + offset) % 16]
+        (r, g, b) = colorsys.hsv_to_rgb(remap(i + offset, 0, LENGTH - 1), 0, 1)
+        pixels[i] = (int(r), int(g), int(b))
 
     offset += 1
