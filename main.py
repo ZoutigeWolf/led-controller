@@ -9,13 +9,14 @@ GREEN = 0x001000
 BLUE = 0x000010
 
 WHITE = RED | GREEN | BLUE
+BLACK = 0x000000
 
 pixels = neopixel.NeoPixel(board.D18, LENGTH)
 
 i = 0
 
 while True:
-    pixels.fill(WHITE)
+    pixels.fill(BLACK)
 
     v = i % LENGTH
 
