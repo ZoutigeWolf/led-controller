@@ -23,4 +23,4 @@ while True:
         )
 
     pixels.show()
-    offset += 10
+    offset += 1
