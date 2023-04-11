@@ -1,4 +1,5 @@
 import colorsys
+import time
 import board
 import neopixel
 
@@ -30,3 +31,4 @@ while True:
 
     pixels.show()
     i += 1
+    time.sleep(0.01)
