@@ -26,5 +26,5 @@ while True:
         pixels[v + 1] = (255, 0, 255)
 
     i += 1
-    time.sleep(0.1)
+    time.sleep(0.025)
 
