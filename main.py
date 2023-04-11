@@ -11,4 +11,10 @@ i = 0
 while True:
     pixels.fill((0, 0, 0))
     pixels[i % 90] = (255, 0, 255)
+
+    if i >= 180:
+        i = 0
+        continue
+
     i += 1
+
