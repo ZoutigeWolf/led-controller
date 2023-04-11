@@ -22,7 +22,7 @@ offset = 0
 
 while True:
     print(offset)
-    for i in range(LENGTH):
-        pixels[i] = COLORS[(offset + i) % 255]
+    pixels[0] = COLORS[(offset) % 255]
+
 
     offset += 10
