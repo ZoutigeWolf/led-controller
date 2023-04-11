@@ -39,6 +39,6 @@ offset = 0
 
 while True:
     for i in range(LENGTH):
-        pixels[i] = COLORS[(remap(i, 0, LENGTH, 0, 255) + offset) % 255]
+        pixels[i] = COLORS[(int(remap(i, 0, LENGTH, 0, 255)) + offset) % 255]
 
     offset += 10
