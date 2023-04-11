@@ -33,6 +33,6 @@ offset = 0
 
 while True:
     for i in range(LENGTH):
-        pixels[i] = COLORS[i]
+        pixels[i] = COLORS[-i]
 
     offset += 1
