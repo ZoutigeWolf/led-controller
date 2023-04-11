@@ -2,34 +2,29 @@ import time
 import board
 import neopixel
 
+def generate_rainbow_colors():
+    rainbow_colors = []
+
+    for i in range(255):
+        r = int(255 * ((i / 255) ** 2))
+        g = int(255 * ((1 - ((i / 255) - 0.5) ** 2) ** 0.5))
+        b = int(255 * (((i / 255) - 1) ** 2))
+        rainbow_colors.append((r, g, b))
+
+    return rainbow_colors
+
+
+COLORS = generate_rainbow_colors()
+
 LENGTH = 90
-
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
-
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-
-PURPLE = (255, 0, 255)
 
 pixels = neopixel.NeoPixel(board.D18, LENGTH)
 
-i = 0
+offset = 0
 
 while True:
-    pixels.fill(tuple(BLACK))
+    for i in range(LENGTH):
+        pixels[i] = COLORS[(offset % 255) + i]
 
-    v = i % LENGTH
-
-    pixels[v] = PURPLE
-
-    if (v - 1) >= 0:
-        pixels[v - 1] = PURPLE
-
-    if (v + 1) < LENGTH:
-        pixels[v + 1] = PURPLE
-
-    i += 1
-    time.sleep(1)
-
+    offset += 1
+    time.sleep(0.001)
