@@ -16,6 +16,10 @@ offset = 0
 while True:
     for i in range(LENGTH):
         (r, g, b) = colorsys.hsv_to_rgb(remap(i + offset, 0, LENGTH - 1, 0, 1), 1, 1)
-        pixels[i] = (int(r), int(g), int(b))
+        pixels[i] = (
+            remap(int(r), 0, 1, 0, 255),
+            remap(int(g), 0, 1, 0, 255),
+            remap(int(b), 0, 1, 0, 255)
+        )
 
     offset += 1
