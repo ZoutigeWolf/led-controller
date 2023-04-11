@@ -25,4 +25,4 @@ while True:
     pixels[0] = COLORS[(offset) % 255]
 
 
-    offset += 10
+    offset += 1
