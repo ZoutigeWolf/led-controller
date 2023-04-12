@@ -18,6 +18,7 @@ def run_effect(effect, *args):
         effect_process.terminate()
 
     effect_process = Process(target=effect, args=args, daemon=True)
+    effect_process.start()
 
 @app.post("/rainbow-wave")
 def rainbow_wave():
