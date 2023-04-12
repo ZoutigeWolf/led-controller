@@ -40,7 +40,7 @@ def increase():
     return "Set successfully", 200
 
 
-@app.post("/set/fill/")
+@app.post("/fill/")
 def fill():
     r = int(request.args.get("R"))
     g = int(request.args.get("G"))
