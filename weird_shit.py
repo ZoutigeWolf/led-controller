@@ -12,30 +12,32 @@ LENGTH = 84
 
 pixels = neopixel.NeoPixel(board.D18, LENGTH, auto_write=False)
 
-i = 0
-end = LENGTH
 
-while True:
-    if end == 0:
-        end = LENGTH
+def weird_shit_effect():
+    i = 0
+    end = LENGTH
 
-    index = i % end
+    while True:
+        if end == 0:
+            end = LENGTH
 
-    (r, g, b) = colorsys.hsv_to_rgb(remap(index, 0, LENGTH - 1, 0, 1), 1, 1)
-    pixels[index] = (
-        int(remap(r, 0, 1, 0, 255)),
-        int(remap(g, 0, 1, 0, 255)),
-        int(remap(b, 0, 1, 0, 255))
-    )
+        index = i % end
 
-    if index == end - 1:
-        end -= 1
+        (r, g, b) = colorsys.hsv_to_rgb(remap(index, 0, LENGTH - 1, 0, 1), 1, 1)
+        pixels[index] = (
+            int(remap(r, 0, 1, 0, 255)),
+            int(remap(g, 0, 1, 0, 255)),
+            int(remap(b, 0, 1, 0, 255))
+        )
 
-    if index == 0:
-        pixels[LENGTH - 1] = (0, 0, 0)
-    else:
-        pixels[index - 1] = (0, 0, 0)
+        if index == end - 1:
+            end -= 1
 
-    pixels.show()
-    i += 1
-    #time.sleep(0.01)
+        if index == 0:
+            pixels[LENGTH - 1] = (0, 0, 0)
+        else:
+            pixels[index - 1] = (0, 0, 0)
+
+        pixels.show()
+        i += 1
+        # time.sleep(0.01)
